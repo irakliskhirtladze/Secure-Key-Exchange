@@ -46,4 +46,7 @@ python manage.py migrate
 ``` 
 python manage.py runserver
 ```
-
+5. Run tests:
+```
+python manage.py test security
+```
