@@ -3,7 +3,7 @@ This project is designed to allow two users to securely exchange secret informat
 shared key that they can use for secure communication.
 
 ### Example Scenario
-1. User A and User B Register:
+1. User A and User B Register and log in to their accounts.
 
 
 2. User A Creates a Channel:
@@ -32,35 +32,18 @@ and the secret key provided by User B.
 
 1. Clone the repository:
 ```
-git clone https://github.com/irakliskhirtladze/Library-management-system.git
+git clone https://github.com/irakliskhirtladze/Secure-Key-Exchange.git
 ```
 2. Create a virtual environment and activate it. To install dependencies run the command:
 ```
 pip install -r requirements.txt
 ```
-3. In project root directory (where manage.py file lives) create .env file. Write these lines in this file:
-```
-EMAIL_HOST_USER=your_email@example.com
-EMAIL_HOST_PASSWORD=your_email_password
-EMAIL_HOST=smtp.example.com
-EMAIL_PORT=587
-```
-If you already have actual email setup for app testing, then replace placeholder values in .env file. Otherwise, leave it
-as shown above.
-
-4. Apply migrations:
+3. Apply migrations:
 ```
 python manage.py migrate
 ```
-5. Populate the database with initial data (random book names, authors and genres):
-```
-python manage.py populate_db
-```
-6. To create admin user run the command below and then follow the instructions:
-```
-python manage.py createsuperuser
-```
-7. Run the development server:
+4. Run the development server:
 ``` 
 python manage.py runserver
 ```
+
