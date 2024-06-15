@@ -2,7 +2,6 @@ from rest_framework import serializers
 from security.models import Channel
 from django.contrib.auth import get_user_model
 
-
 User = get_user_model()
 
 
@@ -16,13 +15,15 @@ class ChannelSerializer(serializers.ModelSerializer):
 
 
 class ChannelCreateSerializer(serializers.ModelSerializer):
-    recipient_user = serializers.CharField()
+    recipient_user = serializers.EmailField()
+    id = serializers.ReadOnlyField()
 
     class Meta:
         model = Channel
-        fields = ['recipient_user']
+        fields = ['id', 'recipient_user']
 
-    def validate_recipient_user(self, value):
+    @staticmethod
+    def validate_recipient_user(value):
         try:
             return User.objects.get(email=value)
         except User.DoesNotExist:
@@ -36,7 +37,4 @@ class ChannelAcceptSerializer(serializers.ModelSerializer):
 
 
 class EmptySerializer(serializers.Serializer):
-    """
-    Serializer with no fields, used for endpoints that don't require input data.
-    """
     pass

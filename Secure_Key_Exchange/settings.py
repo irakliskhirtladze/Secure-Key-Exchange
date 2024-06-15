@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'rest_framework',  # New
     'rest_framework_simplejwt',  # New
     'djoser',  # New
-    'drf_yasg',  # New
 
     'users',  # New
     'security',  # New
@@ -150,3 +149,5 @@ LOGOUT_REDIRECT_URL = '/users/login/'  # New
 
 BASE = 2  # New
 MODULUS = 'A4E02E7144D7189965AA9901013921BD721AE84072B4F41A3ED4AD3F5DC1C403'  # New
+
+ENCRYPTION_KEY = 'oRCenePU87K3_v9DlTgHxONNNaczExzrGtMdAn62csk='  # New
